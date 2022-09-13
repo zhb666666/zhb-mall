@@ -14,6 +14,16 @@ public class AddCategoryRequest {
     @NotNull(message = "name不能为空")
     private String name;
 
+    @Override
+    public String toString() {
+        return "AddCategoryRequest{" +
+                "name='" + name + '\'' +
+                ", type=" + type +
+                ", parentId=" + parentId +
+                ", orderNum=" + orderNum +
+                '}';
+    }
+
     @NotNull(message = "type不能为空")
     @Max(3)
     private Integer type;

@@ -7,6 +7,9 @@ import org.apache.tomcat.util.codec.binary.Base64;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * 密码加密工具
+ */
 public class MD5Utils {
 
 

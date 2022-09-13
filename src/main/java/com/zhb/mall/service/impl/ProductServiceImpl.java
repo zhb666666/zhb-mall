@@ -91,12 +91,14 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public PageInfo list(ProductListReq productListReq) {
 
-        PageHelper.startPage(productListReq.getPageNum(), productListReq.getPageSize(), productListReq.getOrderBy());
+        PageHelper.startPage(productListReq.getPageNum(), productListReq.getPageSize());
         String keyword = productListReq.getKeyword();
         if (keyword != null) productListReq.setKeyword("%" + keyword + "%");
         else productListReq.setKeyword("");
         ArrayList<CategoryVO> categoryVOS=new ArrayList<>() ;
+        System.out.println(productListReq.getCategoryId());
          categoryService.recursivelyFindCategories(categoryVOS,productListReq.getCategoryId());
+
         ArrayList<Integer> arrayList = new ArrayList<>();
         arrayList.add(productListReq.getCategoryId());
         if (categoryVOS != null) {
@@ -106,6 +108,8 @@ public class ProductServiceImpl implements ProductService {
             }
         }
         productListReq.setIds(arrayList);
+        PageHelper.startPage(productListReq.getPageNum(), productListReq.getPageSize(),productListReq.getOrderBy());
+
         ArrayList<Product> list = productMapper.list(productListReq);
 
         return new PageInfo(list);

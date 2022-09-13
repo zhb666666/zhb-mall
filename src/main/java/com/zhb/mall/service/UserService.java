@@ -5,7 +5,7 @@ import com.zhb.mall.model.pojo.User;
 
 public interface UserService {
 
-    public User getUser();
+
 
     public void register(String userName,String password)throws zhbMallException;
 

@@ -69,6 +69,8 @@ public class Cart {
         return updateTime;
     }
 
+
+
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }

@@ -28,7 +28,7 @@ ProductService productService;
     @GetMapping("/product/list")
     @ApiOperation("前台商品列表")
     public ApiRestResponse list(ProductListReq productListReq){
-        System.out.println("111111"+productListReq);
+
         PageInfo list = productService.list(productListReq);
        return ApiRestResponse.success(list);
 

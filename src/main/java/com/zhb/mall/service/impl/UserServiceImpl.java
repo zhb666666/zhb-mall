@@ -17,10 +17,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
-    @Override
-    public User getUser() {
-        return userMapper.selectByPrimaryKey(1);
-    }
+
 
     @Override
     public void register(String userName, String password) throws zhbMallException {

@@ -55,9 +55,11 @@ public class ProductAdminController {
         String Filename = file.getOriginalFilename();
         String subFileName = Filename.substring(Filename.lastIndexOf("."));
         UUID uuid = UUID.randomUUID();
-        String newFileName = uuid.toString() + subFileName;
+        String newFileName = uuid + subFileName;
         File fileContent = new File(Constant.FILE_UPLOAD_DIR);
-        File destFile = new File(fileContent + "\\" + newFileName);
+        File destFile = new File(fileContent +  newFileName);
+        //File destFile = new File(fileContent + "\\" + newFileName);
+        //部署到云服务器File destFile = new File(fileContent +  newFileName);
         if (!fileContent.exists()) {
             if (!fileContent.mkdirs()) {
                 throw new zhbMallException(zhbMallExceptionEnum.MKDIR_FAILED);

@@ -5,6 +5,7 @@ import com.zhb.mall.common.ApiRestResponse;
 import com.zhb.mall.common.Constant;
 import com.zhb.mall.exception.zhbMallException;
 import com.zhb.mall.exception.zhbMallExceptionEnum;
+import com.zhb.mall.filter.UserFilter;
 import com.zhb.mall.model.pojo.User;
 import com.zhb.mall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +22,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/test")
-    @ResponseBody//将java对象转换成json对象
-    public User personalPage() {
-        return userService.getUser();
-    }
+
 
     /**
      * 用户注册接口
@@ -131,8 +128,10 @@ public class UserController {
         }
         User user = userService.login(userName, password);
         if (userService.checkAdminRole(user)) {
+            UserFilter.currentUser=user;
             user.setPassword(null);//保存用户信息时不保存密码
             session.setAttribute(Constant.ZHB_MALL_USER, user);//使用session保存信息
+
             return ApiRestResponse.success(user);
         }else {
             return  ApiRestResponse.error(zhbMallExceptionEnum.NEED_ADMIN);

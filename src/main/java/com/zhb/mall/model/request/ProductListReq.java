@@ -1,9 +1,12 @@
 package com.zhb.mall.model.request;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 public class ProductListReq {
+
 
     private String keyword;
 

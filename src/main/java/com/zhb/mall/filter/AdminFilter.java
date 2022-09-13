@@ -27,17 +27,13 @@ import org.springframework.stereotype.Component;
  */
 
 
-@WebFilter(filterName = "AdminFilter",urlPatterns = {"/admin/*"})
+@WebFilter(filterName = "AdminFilter",urlPatterns = {"/admin/category/*","/admin/product/*","/admin/order/*"})
 public class AdminFilter implements Filter {
-
     @Autowired
     UserService userService;
-
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-
     }
-
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
             FilterChain filterChain) throws IOException, ServletException {

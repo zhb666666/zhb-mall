@@ -90,9 +90,9 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
 
+
 public void recursivelyFindCategories(List<CategoryVO> categoryVOList, Integer parentId) {
         List<Category> categoryList = categoryMapper.selectCategoriesByParentId(parentId);
-    System.out.println("--------------");
         if (!CollectionUtils.isEmpty(categoryList)) {
             for (int i = 0; i < categoryList.size(); i++) {
                 Category category = categoryList.get(i);
