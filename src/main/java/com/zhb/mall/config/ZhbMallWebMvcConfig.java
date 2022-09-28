@@ -15,7 +15,7 @@ public class ZhbMallWebMvcConfig extends DelegatingWebMvcConfiguration {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/admin/**").addResourceLocations("classpath:/static/admin/");
+        registry.addResourceHandler("/admin/**").addResourceLocations(new String[]{"classpath:/static/admin/"});
         registry.addResourceHandler("/images/**")
                 .addResourceLocations("file:" + Constant.FILE_UPLOAD_DIR);
         registry.addResourceHandler("swagger-ui.html").addResourceLocations(

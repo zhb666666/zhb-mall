@@ -14,5 +14,9 @@ class MallApplicationTests {
     void contextLoads()  {
         System.out.println("hello");
     }
+    @Test
+    void test()  {
+
+    }
 
 }

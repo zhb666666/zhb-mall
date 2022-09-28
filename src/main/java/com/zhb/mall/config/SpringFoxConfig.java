@@ -29,7 +29,7 @@ public class SpringFoxConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("慕慕生鲜")
+                .title("乡村生鲜网")
                 .description("")
                 .termsOfServiceUrl("")
                 .build();
