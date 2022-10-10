@@ -57,7 +57,7 @@ public class ProductAdminController {
         UUID uuid = UUID.randomUUID();
         String newFileName = uuid + subFileName;
         File fileContent = new File(Constant.FILE_UPLOAD_DIR);
-        File destFile = new File(fileContent +  newFileName);
+        File destFile = new File(fileContent+ "\\"+   newFileName);
         //File destFile = new File(fileContent + "\\" + newFileName);
         //部署到云服务器File destFile = new File(fileContent +  newFileName);
         if (!fileContent.exists()) {
