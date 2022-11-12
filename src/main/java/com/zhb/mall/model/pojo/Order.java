@@ -1,5 +1,7 @@
 package com.zhb.mall.model.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Order {
@@ -22,6 +24,8 @@ public class Order {
     private Integer postage;
 
     private Integer paymentType;
+
+
 
     private Date deliveryTime;
 
